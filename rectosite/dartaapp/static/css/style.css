@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .bookshelf {
+    position: relative;
+  }
+  
+  .shelf {
+    width: 100%;
+    height: 20px;
+    background-color: #8b4513; /* Brown color for the shelf */
+  }
+  
+  .books {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .book {
+    width: 50px;
+    height: 80px;
+    background-color: #4682b4; /* Blue color for the books */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
