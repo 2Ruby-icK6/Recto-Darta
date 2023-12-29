@@ -1,33 +1,113 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-  }
-  
-  .bookshelf {
-    position: relative;
-  }
-  
-  .shelf {
-    width: 100%;
-    height: 20px;
-    background-color: #8b4513; /* Brown color for the shelf */
-  }
-  
-  .books {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-  }
-  
-  .book {
-    width: 50px;
-    height: 80px;
-    background-color: #4682b4; /* Blue color for the books */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
+  margin: 0;
+  background-color: #597E52;
+}
+
+/* Header Menu*/
+header {
+  background-color: #435540;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container img {
+  width: 40%;
+  height: auto;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 10px;
+  font-size: 20px;
+  font-family: 'Rubik Doodle Shadow';
+}
+
+header nav a {
+  background-color: #739072;
+  padding: 20px 70px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 5vh;
+}
+
+header nav a:hover {
+  color:  #262626;
+  background-color: #86A789;
+}
+/* End Header Menu */
+
+/* Footer */
+footer {
+  background-color: #435540;
+  color: #fff;
+  padding: 11px;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  font-family: 'Lora';
+  width: 30%;
+}
+
+.copyright {
+  font-family: 'Lora';
+  text-align: center;
+}
+
+/* End Footer */
+
+.box-container {
+  width: auto;
+  height: auto;
+  background-color: #739072;
+  padding: 20px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 2vh;
+  display: flex;
+}
+
+
+.main-container {
+  font-size: 3vh;
+  font-family: 'Rubik Doodle Shadow';
+  text-align: center;
+  width: 190vh;
+  height: auto;
+  background-color: #739072;
+  padding: 10px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5vh;
+}
+
+.container {
+  width: 200vh;
+  height: auto;
+  background-color: #739072;
+  padding: 20px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 2vh;
+}
