@@ -18,7 +18,7 @@
   
   <div class="bar-base-container">
     <a href="{% url 'customer-search' %}"><button>Search</button></a>
-    <a href="#"><button>Add Customer</button></a>
+    <a href="{% url 'customer-add' %}"><button>Add Customer</button></a>
   </div>
 
   <div class="box-container">
@@ -27,6 +27,7 @@
             <th>Customer Name</th>
             <th>Book - Bought</th>
             <th>Book Store</th>
+            <th class="action">Action</th>
         </thead>
         {% for customer in object_list %}
         <tbody>
@@ -34,6 +35,10 @@
             <td>{{ customer.fullname }}</td>
             <td>{{ customer.book.title }}</td>
             <td>{{ customer.bookstore.bookstore_name }}</td>
+            <td class="action">
+              <a href="{{ customer.id }}"><button class="btn-update-table">Edit</button></a>
+              <a href="{{ customer.id }}/delete"><button class="btn-delete-table">Delete</button></a>
+            </td>
           </tr>
         </tbody>
         {% endfor %}

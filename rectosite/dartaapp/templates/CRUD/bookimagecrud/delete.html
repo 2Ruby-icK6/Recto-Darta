@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
-    <title>{% block title %} Book Store | Removing {% endblock %}</title>
+    <title>{% block title %} Library | Book Image Delete {% endblock %}</title>
   </head>
   <body>
     {% block content %}
@@ -23,7 +23,7 @@
                 {% include '../../includes/form.html' %}
               <input class="btn-delete" type="submit" value="Confirm">
           </form>
-          <a href="{% url 'bookstore-list' %}"><button class="btn-submit">Cancel</button></a>
+          <a href="{% url 'bookimage-list' %}"><button class="btn-submit">Cancel</button></a>
       </div>
       <div class="container">
 

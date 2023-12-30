@@ -9,12 +9,12 @@
       name="viewport" 
       content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-    <title>{% block title %} Book Store | Adding {% endblock %}</title>
+    <title>{% block title %} Library | Book Cover Publishing {% endblock %}</title>
   </head>
   <body>
     {% block content %}
       <div class="form-container">
-        <h2>New Book Store</h2> 
+        <h2>Publish Book Cover</h2> 
         <form role="form" method="post" novalidate>
             {% csrf_token %}
                 {% include '../../includes/form.html' %}

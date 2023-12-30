@@ -38,7 +38,9 @@
         <div class="book-container">
           <h2>{{ book.title }} - rate: {{ book.stars }}</h2>
           <p>{{ book.book_description }}</p>
-          <p><strong>Genre:</strong> {{ book.category }}</p> 
+          <p><strong>Genre:</strong> {{ book.category }}</p>
+          <a href="{{ book.id }}"><button class="btn-update">Edit</button></a>
+          <a href="{{ book.id }}/delete"><button class="btn-delete">Delete</button></a> 
         </div>
 
       </div>

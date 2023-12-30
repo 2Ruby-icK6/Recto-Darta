@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport" 
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>{% block title %} Customer | Updating {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+      <div class="form-container">
+        <h2>Update Customer</h2> 
+        <form role="form" method="post" novalidate>
+            {% csrf_token %}
+                {% include '../../includes/form.html' %}
+            <button type='submit' class="btn-submit">Submit</button>
+        </form>
+        <br>
+      </div>
+    {% endblock %}
+  </body>
+</html>

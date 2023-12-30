@@ -17,7 +17,8 @@
   {% block content %}
     <div class="bar-base-container">
       <a href="{% url 'book-search' %}"><button>Search</button></a>
-      <a href="#"><button>Publish</button></a>
+      <a href="{% url 'bookdetails-add' %}"><button>Publish</button></a>
+      <a href="{% url 'bookimage-list' %}"><button>Images</button></a>
     </div>
     
     {% for book in object_list %}
@@ -30,14 +31,17 @@
         {% endif %}
         <br><br>
         <h2>Price: ${{ book.price }} Available: {{ book.availability }}</h2>
+        
       </div>
 
       <div class="book-container">
         <h2>{{ book.title }} - rate: {{ book.stars }}</h2>
         <p>{{ book.book_description }}</p>
-        <p><strong>Genre:</strong> {{ book.category }}</p> 
+        <p><strong>Genre:</strong> {{ book.category }}</p>
+        <a href="{{ book.id }}"><button class="btn-update">Edit</button></a>
+        <a href="{{ book.id }}/delete"><button class="btn-delete">Delete</button></a>
       </div>
-
+      
     </div>
 
     {% endfor %}

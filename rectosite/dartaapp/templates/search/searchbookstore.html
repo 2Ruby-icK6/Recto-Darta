@@ -27,6 +27,7 @@
                 <th>Book Stores</th>
                 <th>Address</th>
                 <th>Postal Code</th>
+                <th class="action">Action</th>
             </thead>
             {% if object_list %}
             {% for store in object_list %}
@@ -35,6 +36,10 @@
                 <td>{{ store.bookstore_name }}</td>
                 <td>{{ store.address }}</td>
                 <td>{{ store.postal_code }}</td>
+                <td class="action">
+                  <a href="{{ store.id }}"><button class="btn-update-table">Edit</button></a>
+                  <a href="{{ store.id }}/delete"><button class="btn-delete-table">Delete</button></a>
+                </td>
               </tr>
             </tbody>
             {% endfor %}

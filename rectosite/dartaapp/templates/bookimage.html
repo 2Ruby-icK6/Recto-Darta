@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>{% block title %} Recto Darta | Library Gallery {% endblock %}</title>
+</head>
+<body>
+  {% block content %}
+    <div class="bar-base-container">
+      <a href="{% url 'bookdetails-list' %}"><button>Return</button></a>
+      <a href="{% url 'bookimage-add' %}"><button>Publish image</button></a>
+    </div>
+    
+    <div class="link-container">
+        <input type="text" id="imageLinkInput" readonly>
+    </div>
+
+    {% for image in object_list %}
+    <div class="gallery-container">
+
+      <div class="book">
+          <img src="{{ image.image_link }}" alt="Book Image" width="50">
+
+          <div class="btn-container">
+            <button onclick="showImageLink('{{ image.image_link }}')">Show Image Link</button>
+            <a href="{{ image.id }}/delete"><button>Delete</button></a>
+          </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+    {% include 'includes/pagination.html'%}
+
+    <script>
+        function showImageLink(link) {
+        document.getElementById("imageLinkInput").value = link;
+        }
+    </script>
+
+  {% endblock %}
+
+</body>
+</html>

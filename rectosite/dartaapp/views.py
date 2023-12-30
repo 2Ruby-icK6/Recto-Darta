@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
-from dartaapp.models import BookDetail, TransactionDetails, Customer, BookStore
-from dartaapp.forms import BookSearchForm, TransactionSearchForm, CustomerSearchForm, BookStoreSearchForm
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
+from django.urls import reverse_lazy
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from dartaapp.models import BookDetail, TransactionDetails, Customer, BookStore, BookImage
+from dartaapp.forms import BookSearchForm, TransactionSearchForm, CustomerSearchForm, BookStoreSearchForm
+from dartaapp.forms import BookDetailForm, TransactionDetailsForm, CustomerForm, BookStoreForm, BookImageForm
+
 
 # Create your views here.
 class HomePageView(ListView):
@@ -47,6 +51,18 @@ class BookStoreListView(ListView):
     template_name = "bookstore.html"
     paginate_by = 10
 
+    def get_queryset(self):
+        return BookStore.objects.order_by('-created_at')
+
+class BookImageListView(ListView):
+    model = BookImage
+    content_object_name = 'bookimage'
+    template_name = "bookimage.html"
+    paginate_by = 10
+
+    def get_queryset(self):
+        return BookImage.objects.all().order_by('created_at') 
+    
 # Search Bar
 def book_list(request):
     form = BookSearchForm(request.GET)
@@ -152,3 +168,102 @@ def bookstore_list(request):
         'form': form,
     }
     return render(request, 'search/searchbookstore.html', context)
+
+# ==================================================================
+# ==================================================================
+# ==================================================================
+
+class BookDetailCreateView(CreateView):
+    model = BookDetail
+    form_class = BookDetailForm
+    template_name = 'CRUD/bookcrud/add.html'
+    success_url = reverse_lazy('bookdetails-list')
+
+class BookDetailUpdateView(UpdateView):
+    model = BookDetail
+    form_class = BookDetailForm
+    template_name = 'CRUD/bookcrud/update.html'
+    success_url = reverse_lazy('bookdetails-list')
+
+class BookDetailDeleteView(DeleteView):
+    model = BookDetail
+    template_name = 'CRUD/bookcrud/delete.html'
+    success_url = reverse_lazy('bookdetails-list')
+
+# ==================================================================
+# ==================================================================
+# ==================================================================
+    
+class TransactionDetailsCreateView(CreateView):
+    model = TransactionDetails
+    form_class = TransactionDetailsForm
+    template_name = 'CRUD/transactioncrud/add.html'
+    success_url = reverse_lazy('transaction-list')
+
+class TransactionDetailsUpdateView(UpdateView):
+    model = TransactionDetails
+    form_class = TransactionDetailsForm
+    template_name = 'CRUD/transactioncrud/update.html'
+    success_url = reverse_lazy('transaction-list')
+
+class TransactionDetailsDeleteView(DeleteView):
+    model = TransactionDetails
+    template_name = 'CRUD/transactioncrud/delete.html'
+    success_url = reverse_lazy('transaction-list')
+
+# ==================================================================
+# ==================================================================
+# ==================================================================
+    
+class CustomerCreateView(CreateView):
+    model = Customer
+    form_class = CustomerForm
+    template_name = 'CRUD/customercrud/add.html'
+    success_url = reverse_lazy('customer-list')
+
+class CustomerUpdateView(UpdateView):
+    model = Customer
+    form_class = CustomerForm
+    template_name = 'CRUD/customercrud/update.html'
+    success_url = reverse_lazy('customer-list')
+
+class CustomerDeleteView(DeleteView):
+    model = Customer
+    template_name = 'CRUD/customercrud/delete.html'
+    success_url = reverse_lazy('customer-list')
+
+# ==================================================================
+# ==================================================================
+# ==================================================================
+    
+class BookStoreCreateView(CreateView):
+    model = BookStore
+    form_class = BookStoreForm
+    template_name = 'CRUD/bookstorecrud/add.html'
+    success_url = reverse_lazy('bookstore-list')
+
+class BookStoreUpdateView(UpdateView):
+    model = BookStore
+    form_class = BookStoreForm
+    template_name = 'CRUD/bookstorecrud/update.html'
+    success_url = reverse_lazy('bookstore-list')
+
+class BookStoreDeleteView(DeleteView):
+    model = BookStore
+    template_name = 'CRUD/bookstorecrud/delete.html'
+    success_url = reverse_lazy('bookstore-list')
+
+# ==================================================================
+# ==================================================================
+# ==================================================================
+    
+class BookImageCreateView(CreateView):
+    model = BookImage
+    form_class = BookImageForm
+    template_name = 'CRUD/bookimagecrud/add.html'
+    success_url = reverse_lazy('bookimage-list')
+
+class BookImageDeleteView(DeleteView):
+    model = BookImage
+    template_name = 'CRUD/bookimagecrud/delete.html'
+    success_url = reverse_lazy('bookimage-list')

@@ -17,7 +17,7 @@
   {% block content %}
   <div class="bar-base-container">
     <a href="{% url 'transaction-search' %}"><button>Search</button></a>
-    <a href="#"><button>Add Transaction</button></a>
+    <a href="{% url 'transaction-add' %}"><button>Add Transaction</button></a>
   </div>
   
   <div class="box-container">
@@ -26,6 +26,7 @@
             <th>Customer Name</th>
             <th>Payment Method</th>
             <th>Transaction Date</th>
+            <th class="action">Action</th>
         </thead>
         {% if object_list %}
           {% for transaction in object_list %}
@@ -34,6 +35,10 @@
                 <td>{{transaction.customer.fullname }}</td>
                 <td>{{ transaction.payment_method }}</td>
                 <td>{{ transaction.transaction_date }}</td>
+                <td class="action">
+                  <a href="{{ transaction.id }}"><button class="btn-update-table">Edit</button></a>
+                  <a href="{{ transaction.id }}/delete"><button class="btn-delete-table">Delete</button></a>
+                </td>
               </tr>
             </tbody>
           {% endfor %}

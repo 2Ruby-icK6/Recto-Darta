@@ -208,7 +208,43 @@ table {
 
 th, td {
   border-bottom: 1px solid #D2E3C8;
-  padding: 8px;
+  padding: 10px;
+}
+
+.action {
+  text-align: center;
+}
+
+.btn-update-table {
+  font-family: 'Rubik Doodle Shadow';
+  background-color: #4F6F52;
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-update-table:hover {
+  background-color: #C6A969;
+  color: #fff;
+}
+
+.btn-delete-table {
+  font-family: 'Rubik Doodle Shadow';
+  background-color: #597E52;
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-delete-table:hover {
+  background-color: #F1E4C3;
+  color: #000000;
 }
 
 th {
@@ -220,7 +256,7 @@ th {
 
 /* Search ADD */
 .bar-base-container {
-  width: 30vh;
+  width: 40vh;
   height: auto;
   background-color: #4F6F52;
   padding: 25px;
@@ -260,4 +296,162 @@ button {
   color: #ffffff;
   padding: 5px 10px;
   margin-right: 10px;
+}
+
+
+.semi-container {
+  width: 150vh;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #86A789;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.semi-container p {
+  font-family: 'Lora';
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+}
+
+.semi-container input {
+  display: block;
+  margin: 10px 67vh;
+  text-align: center;
+}
+
+.semi-container a {
+  display: block;
+  margin: 10px 40vh;  
+  text-align: center;
+}
+
+.gallery-container {  
+  display: inline-block;
+  padding: 1%;
+  width: 20%;
+  max-width: 280px;
+  height: 5%;
+  max-height: 90px;
+  box-sizing: border-box;
+}
+
+.link-container {  
+  width: 100vh;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #86A789;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.link-container input {  
+  width: 100vh;
+  text-align: center;
+  font-family: 'Lora';
+  font-weight: bold;
+  border: none;
+}
+
+.btn-container {
+  display: inline-flex;
+  margin: 10px auto;
+}
+
+
+/* Form */
+.form-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #86A789;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  font-family: 'Rubik Doodle Shadow';
+  text-align: center;
+}
+
+.form-container button {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.form-group {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #86A789;
+  border-radius: 5vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-label {
+  font-family: 'Lora';
+  color: #000000;
+  font-weight: bolder;
+}
+
+.form-control {
+  display: flex;
+  margin-top: 10px;
+  width: 80vh;
+  padding: 5px;
+  background-color: #D2E3C8;
+  border-radius: 5vh;
+  border: none;
+}
+
+.btn-submit {
+  font-family: 'Rubik Doodle Shadow';
+  background-color: #4F6F52;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10vh;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-submit:hover {
+  background-color: #F1E4C3;
+  color: #000000;
+}
+
+.btn-update {
+  font-family: 'Rubik Doodle Shadow';
+  background-color: #4F6F52 ;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10vh;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-update:hover {
+  background-color: #86A789;
+  color: #000000;
+}
+
+.btn-delete {
+  font-family: 'Rubik Doodle Shadow';
+  background-color: #BE3144;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10vh;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-delete:hover {
+  background-color: #F05941;
+  color: #000000;
 }
