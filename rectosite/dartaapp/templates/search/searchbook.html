@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>{% block title %} Recto Darta | Library {% endblock %}</title>
+</head>
+<body>
+  {% block content %}
+    <div class="bar-container">
+      <form method="get" action="{% url 'book-search' %}">
+        {{ form }}
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    
+    {% if object_list %}
+      {% for book in object_list %}
+
+      <div class="box-container">
+
+        <div class="book">
+          {% if book.image %}
+            <img src="{{ book.image.image_link }}" alt="Book Image" width="50">
+          {% endif %}
+          <br><br>
+          <h2>Price: ${{ book.price }} Available: {{ book.availability }}</h2>
+        </div>
+
+        <div class="book-container">
+          <h2>{{ book.title }} - rate: {{ book.stars }}</h2>
+          <p>{{ book.book_description }}</p>
+          <p><strong>Genre:</strong> {{ book.category }}</p> 
+        </div>
+
+      </div>
+
+      {% endfor %}
+      
+      
+    {% else %}
+      <p>No results found.</p>
+    {% endif %}
+    
+    {% include '../includes/paginationsearch.html'%}
+    
+  {% endblock %}
+  
+</body>
+</html>

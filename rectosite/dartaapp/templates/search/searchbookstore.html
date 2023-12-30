@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>{% block title %} Recto Darta | Library {% endblock %}</title>
+</head>
+<body>
+  {% block content %}
+    <div class="bar-container">
+        <form method="get" action="{% url 'bookstore-search' %}">
+        {{ form }}
+        <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="box-container">
+        <table>
+            <thead>
+                <th>Book Stores</th>
+                <th>Address</th>
+                <th>Postal Code</th>
+            </thead>
+            {% if object_list %}
+            {% for store in object_list %}
+            <tbody>
+              <tr>
+                <td>{{ store.bookstore_name }}</td>
+                <td>{{ store.address }}</td>
+                <td>{{ store.postal_code }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+            {% else %}
+                <p>No results found.</p>
+            {% endif %}
+        </table>
+      </div>
+    
+      {% include '../includes/paginationsearch.html'%}
+    
+  {% endblock %}
+  
+</body>
+</html>

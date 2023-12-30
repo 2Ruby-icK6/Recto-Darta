@@ -33,7 +33,7 @@ header nav ul {
 header nav ul li {
   display: inline;
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Rubik Doodle Shadow';
 }
 
@@ -77,8 +77,63 @@ footer {
 
 /* End Footer */
 
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.page-item {
+  margin-right: 5px;
+}
+
+.page-link {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #4F6F52;
+  background-color: #F1E4C3;
+  border-radius: 10vh;
+}
+
+.page-link:hover {
+  background-color: #FFFFEC;
+}
+
+/* Adjusted selectors to accommodate classes with spaces */
+.page-item.disabled {
+  /* Styles for disabled pagination item */
+  color: #6c757d;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.page-item.active {
+  background-color: #F1E4C3;
+  border-radius: 10vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+div.pagination-container {
+  margin-top: -24vh;
+}
+
+div.page-container {
+  width:  90vh;
+  height: auto;
+  background-color: #739072;
+  padding: 10px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10vh;
+}
+
+/* Pagination end */
+
 .box-container {
-  width: auto;
+  width: 200vh;
   height: auto;
   background-color: #739072;
   padding: 20px;
@@ -110,4 +165,99 @@ footer {
   margin: 50px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 2vh;
+}
+
+.book-container {
+  width: 200vh;
+  height: auto;
+  background-color: #D2E3C8;
+  padding: 20px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 2vh;
+}
+
+.book {
+  width: 30vh;
+  height: 40vh;
+  background-color: #D2E3C8;
+  padding: 20px;
+  margin: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 2vh;
+  font-family: 'Lora';
+  font-size: 12px;
+}
+
+.book img {
+  width: 30vh;
+  height: 40vh;
+}
+
+.book-container {
+    font-family: 'Lora';
+    text-align: justify;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border-bottom: 1px solid #D2E3C8;
+  padding: 8px;
+}
+
+th {
+  background-color: #D2E3C8;
+  text-align: center;
+}
+
+/* Table End */
+
+/* Search ADD */
+.bar-base-container {
+  width: 30vh;
+  height: auto;
+  background-color: #4F6F52;
+  padding: 25px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5vh;
+  justify-content: center;
+  display: flex;
+  margin-right: 5vh;
+}
+
+.bar-container {
+  width: 60vh;
+  height: auto;
+  background-color: #4F6F52;
+  padding: 25px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5vh;
+  justify-content: center;
+  display: flex;
+  margin-right: 5vh;
+}
+
+label {
+  font-family: 'Lora';
+  color: #ffffff;
+}
+
+input {
+  background-color: #86A789;
+}
+
+button {
+  background-color: #435540;
+  border-radius: 5vh;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin-right: 10px;
 }

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>{% block title %} Recto Darta | Book Store {% endblock %}</title>
+</head>
+<body>
+  {% block content %}
+
+  <div class="bar-base-container">
+    <a href="{% url 'bookstore-search' %}"><button>Search</button></a>
+    <a href="#"><button>Add Book Store</button></a>
+  </div>
+
+  <div class="box-container">
+    <table>
+        <thead>
+            <th>Book Stores</th>
+            <th>Address</th>
+            <th>Postal Code</th>
+        </thead>
+        {% for store in object_list %}
+        <tbody>
+          <tr>
+            <td>{{ store.bookstore_name }}</td>
+            <td>{{ store.address }}</td>
+            <td>{{ store.postal_code }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+  </div>
+  
+  {% include 'includes/pagination.html'%}
+
+  {% endblock %}
+</body>
+</html>

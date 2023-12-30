@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <title>{% block title %} Recto Darta | Transaction {% endblock %}</title>
+</head>
+<body>
+  {% block content %}
+  <div class="bar-base-container">
+    <a href="{% url 'transaction-search' %}"><button>Search</button></a>
+    <a href="#"><button>Add Transaction</button></a>
+  </div>
+  
+  <div class="box-container">
+    <table>
+        <thead>
+            <th>Customer Name</th>
+            <th>Payment Method</th>
+            <th>Transaction Date</th>
+        </thead>
+        {% if object_list %}
+          {% for transaction in object_list %}
+            <tbody>
+              <tr>
+                <td>{{transaction.customer.fullname }}</td>
+                <td>{{ transaction.payment_method }}</td>
+                <td>{{ transaction.transaction_date }}</td>
+              </tr>
+            </tbody>
+          {% endfor %}
+        {% else %}
+          <p>No results found.</p>
+        {% endif %}
+    </table>
+  </div>
+  
+  {% include 'includes/pagination.html'%}
+
+  {% endblock %}
+</body>
+</html>

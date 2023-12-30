@@ -42,14 +42,6 @@ class Customer (BaseModel) :
     def __str__(self) :
         return self.fullname
 
-# class Transaction (BaseModel) :
-#     customer = models.ForeignKey(Customer, null=True, blank=True, on_delete=models.CASCADE)
-#     payment_method = models.CharField(max_length=100, null=True, blank=True)
-#     transaction_date = models.DateTimeField(null=True, blank=True)
-
-#     def __str__(self) :
-#         return self.fullname
-
 class TransactionDetails (BaseModel) :
     customer = models.ForeignKey(Customer, null=True, blank=True, on_delete=models.CASCADE)
     payment_method = models.CharField(max_length=100, null=True, blank=True)
