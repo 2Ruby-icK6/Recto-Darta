@@ -60,6 +60,12 @@ footer {
   bottom: 0;
 }
 
+.footer-section a {
+  font-family: 'Lora';
+  color: #fff;
+  text-decoration: none;
+}
+
 .footer-container {
   display: flex;
   justify-content: space-around;
