@@ -22,6 +22,12 @@
  - Transaction [FK - Customer]
  - Customer [FK - Book & Book Store]
 
+### Content - ERD
+ - Book Store
+ - Book Image [One] -- [One] Book
+ - Transaction [One] -- [Many] Customer 
+ - Customer [Many] -- [Many] Book 
+
 ### Admin
  - rap - 12345678
  - kjmartinez - finallab_test123
